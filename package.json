@@ -1,0 +1,27 @@
+{
+    "name": "djs-commands-docs",
+    "version": "1.0.0",
+    "description": "Documentation website for djs-commands npm package.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "discord.js",
+        "discord",
+        "bot",
+        "commands",
+        "command handler",
+        "types",
+        "utility",
+        "tool",
+        "docs",
+        "documentation"
+    ],
+    "author": "D3OXY, deoxy.dev",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/D3OXY/djs-commands-docs/issues"
+    },
+    "homepage": "https://djscommands.deoxy.dev"
+}
