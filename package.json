@@ -1,7 +1,6 @@
 {
     "name": "djs-commands-docs",
     "private": true,
-    "type": "module",
     "version": "1.0.0",
     "description": "Documentation website for djs-commands npm package.",
     "repository": {
@@ -30,5 +29,19 @@
     "bugs": {
         "url": "https://github.com/D3OXY/djs-commands-docs/issues"
     },
-    "homepage": "https://djscommands.deoxy.dev"
+    "homepage": "https://djscommands.deoxy.dev",
+    "dependencies": {
+        "next": "^13.4.12",
+        "nextra": "^2.10.0",
+        "nextra-theme-docs": "^2.10.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.5",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.27",
+        "tailwindcss": "^3.3.3",
+        "typescript": "^5.1.6"
+    }
 }

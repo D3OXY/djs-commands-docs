@@ -1,0 +1,61 @@
+import { Callout, Steps, Tab, Tabs } from "nextra-theme-docs";
+
+# Reference
+
+Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+
+## What is Nextra?
+
+A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+
+## Documentation
+
+The documentation is available at [https://nextra.site](https://nextra.site).
+
+## Package Setup
+
+<Steps>
+
+### Install the packages
+
+{/* prettier-ignore-start */}
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install @d3oxy/djs-commands
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn add @d3oxy/djs-commands 
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm install @d3oxy/djs-commands 
+    ```
+  </Tab>
+</Tabs>
+
+{/* prettier-ignore-end */}
+
+### Add env variables
+
+```bash
+DISCORD_BOT_TOKEN=... # A secret key for your app (starts with sk_live_)
+```
+
+<Callout type="info">
+    If you're not deploying through Vercel, you also need to add a
+    `DISCORD_BOT_TOKEN` environment variable that points to your app, e.g.
+    `https://myapp.com`. This variable can also be used to override the default
+    URL in development which is `http://localhost:3000` unless specified
+    otherwise.
+</Callout>
+
+<Callout type="warning">
+  If you don't already have a uploadthing secret key, [sign up](https://uploadthing.com/sign-in) and create one from
+  the [dashboard!](https://uploadthing.com/dashboard)
+</Callout>
+</Steps>

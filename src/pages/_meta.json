@@ -1,0 +1,27 @@
+{
+    "index": "DJS-Commands",
+    "getting-started": "Getting Started",
+    "basic-usage": "Basic Usage",
+    "advanced-usage": "Advanced Usage",
+    "--": {
+        "type": "separator",
+        "title": "Others"
+    },
+    "changelog": "CHANGELOG",
+    "contributing": "CONTRIBUTING",
+    "about": {
+        "title": "About",
+        "type": "page"
+    },
+    "contact": {
+        "title": "Contact ↗",
+        "type": "page",
+        "href": "https://deoxy.dev/#contact",
+        "newWindow": true
+    },
+    "reference": {
+        "title": "Reference",
+        "type": "page",
+        "display": "hidden"
+    }
+}
