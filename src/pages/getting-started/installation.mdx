@@ -1,3 +1,86 @@
+{/* prettier-ignore-start */}
+
+import { Tab, Tabs, Callout, Steps, Cards, Card } from "nextra/components";
+import { Icons } from "../../components/Icons";
+
 # Installation
 
-How To Install
+Follow the instructions below to install DJS-Commands and the other required Dependencies.
+
+<Steps>
+### Install Required Dependencies
+
+Ignore the ones you already have installed.
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install discord.js dotenv
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn install discord.js dotenv
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm install discord.js dotenv
+    ```
+  </Tab>
+</Tabs>
+### Install DJS-Commands
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install @d3oxy/djs-commands@latest
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn install @d3oxy/djs-commands@latest
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm install @d3oxy/djs-commands@latest
+    ```
+  </Tab>
+</Tabs>
+### Install Optional Dependencies (Recommended)
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install mongoose
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn install mongoose
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm install mongoose
+    ```
+  </Tab>
+</Tabs>
+
+</Steps>
+## Project Setup
+
+### Learn how to setup a complete DiscordJS Bot Project with DJS-Commands.
+
+Choose your preferred Language below.
+
+<Callout type="info">
+Typescript Recommended<br/> DJS-Commands is designed to use the full potential of Typescripts Type Safety and Autocompletion. If you are not familiar with Typescript, you can use Javascript.
+</Callout>
+
+<Cards>
+  <Card icon={<Icons.Javascript />} title="Javacript" href="/getting-started/project-setup-javascript" />
+  <Card icon={<Icons.Typescript />} title="Typescript" href="/getting-started/project-setup-typescript" />
+</Cards>
+
+{/* prettier-ignore-end */}

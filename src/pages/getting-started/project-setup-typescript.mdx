@@ -1,0 +1,435 @@
+{/* prettier-ignore-start */}
+
+import { Tab, Tabs, Callout, Steps, FileTree, Cards, Card } from "nextra/components";
+import { Icons } from "../../components/Icons";
+
+# Project Setup
+
+Follow the instructions below to setup a DiscordJS projects with djs-commands package in Typescript.
+
+## Let's Get Started
+
+<Steps>
+### Create Project Directory
+
+Create a new directory for your project and navigate into it.
+In this example, we will be using `discordjs-bot` as the project name.
+
+```bash copy
+mkdir discordjs-bot
+cd discordjs-bot
+```
+
+### Initialize Project
+
+Initialize the project with your preferred package manager.
+<Callout type="info">
+Recommended: `pnpm`<br/>[PNPM](https://pnpm.io/) is a fast, disk space efficient package manager that uses hard links and symlinks to save space.
+</Callout>
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm init
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn init
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm init
+    ```
+  </Tab>
+</Tabs>
+### Install Dependencies
+
+Install the required dependencies for the project including `discord.js`, `@d3oxy/djs-commands`, `dotenv` and `mongoose`.
+
+| Dependency | Description | Link | Required |
+| ---------- | ----------- | ---- | -------- |
+| `discord.js` | A powerful library for interacting with the Discord API | [npm](https://www.npmjs.com/package/discord.js) | Required |
+| `@d3oxy/djs-commands` | A package for creating DiscordJS bots with ease | [npm](https://www.npmjs.com/package/@d3oxy/djs-commands) | Required |
+| `dotenv` | A package for loading environment variables from a `.env` file | [npm](https://www.npmjs.com/package/dotenv) | Required |
+| `mongoose` | A [MongoDB](https://www.mongodb.com/) object modeling tool designed to work in an asynchronous environment | [npm](https://www.npmjs.com/package/mongoose) | Optional |
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install discord.js @d3oxy/djs-commands dotenv mongoose
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn install discord.js @d3oxy/djs-commands dotenv mongoose
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm install discord.js @d3oxy/djs-commands dotenv mongoose
+    ```
+  </Tab>
+</Tabs>
+### Install Dev Dependencies
+
+Install the required dev dependencies for the project including `typescript`, `ts-node`, `concurently` and `nodemon`.
+
+| Dependency | Description | Link | Required |
+| ---------- | ----------- | ---- | -------- |
+| `typescript` | A typed superset of JavaScript that compiles to plain JavaScript | [npm](https://www.npmjs.com/package/typescript) | Required |
+| `ts-node` | TypeScript execution and REPL for node.js | [npm](https://www.npmjs.com/package/ts-node) | Required |
+| `concurrently` | Run commands concurrently | [npm](https://www.npmjs.com/package/concurrently) | Required |
+| `nodemon` | A utility that will monitor for any changes in your source and automatically restart your server | [npm](https://www.npmjs.com/package/nodemon) | Required |
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm install -D typescript ts-node concurrently nodemon
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn add -D typescript ts-node concurrently nodemon
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm add -D typescript ts-node concurrently nodemon
+    ```
+  </Tab>
+</Tabs>
+
+### Create a `.env` file
+
+In the root of your project create a `.env` file.<br/>
+This files is used to store environment variables securely for your project.
+
+```bash copy
+touch .env
+```
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.File name=".env" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+  </FileTree.Folder>
+</FileTree>
+<Callout type="info">`pnpm-lock.json` may vary based on the package manager you chose.</Callout>
+
+### Setup `.gitignore` File
+
+#### Create a `.gitignore` file
+
+In the root of your project create a `.gitignore` file.<br/>
+This files is used to tell git which files it should not track / not maintain a version history for.
+
+```bash copy
+touch .gitignore
+```
+
+#### Add the following to the file
+
+`node_modules`, `.env`, `dist` and `pnpm-lock.json` should be ignored by git.<br/>
+Add the following to the `.gitignore` file.
+
+```bash copy filename=".gitignore"
+node_modules
+.env
+dist
+pnpm-lock.json
+```
+
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+  </FileTree.Folder>
+</FileTree>
+
+### Initialize TypeScript
+
+Initialize TypeScript in your project by running the following command.
+
+```bash copy
+tsc --init
+```
+
+### Configure TypeScript
+
+Open the `tsconfig.json` file and replace the contents with the following.
+
+```json filename="tsconfig.json" copy
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "target": "esnext",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+    },
+    "exclude": [
+        "dist/**/*"
+    ]
+}
+```
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+    <FileTree.File name="tsconfig.json" />
+  </FileTree.Folder>
+</FileTree>
+
+### Create a `src` directory
+
+Create a `src` directory in the root of your project.<br/>
+This directory will contain all of your source code.
+
+```bash copy
+mkdir src
+```
+
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.Folder name="src" defaultOpen>
+    </FileTree.Folder>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+    <FileTree.File name="tsconfig.json" />
+  </FileTree.Folder>
+</FileTree>
+### Add neccessary scrips to `package.json`
+
+Open the `package.json` file and add the following scripts.
+
+```json filename="package.json" copy
+{
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "rm -rf ./dist && tsc --outDir dist --rootDir src --skipLibCheck",
+    "build:dev": "tsc -w --outDir dist --rootDir src --skipLibCheck",
+    "dev": "concurrently \"npm run build:dev\" \"nodemon dist/index.js\"",
+  },
+}
+```
+
+### Create the Index File for your Bot
+
+Create a `index.ts` file in the `src` directory.<br/>
+This file will be the entry point for your bot.
+
+```bash copy
+touch src/index.ts
+```
+
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.Folder name="src" defaultOpen>
+      <FileTree.File name="index.ts" />
+    </FileTree.Folder>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+    <FileTree.File name="tsconfig.json" />
+  </FileTree.Folder>
+</FileTree>
+
+### Write your first code in `index.ts`
+
+Open the `index.ts` file and add the following code.
+
+```ts filename="src/index.ts" copy showLineNumbers {3,18-22}
+import { Client, IntentsBitField, Partials, Interaction } from "discord.js";
+import path from "path";
+import CommandHandler from "@d3oxy/djs-commands";
+require("dotenv").config();
+
+const client = new Client({
+    intents: [
+        IntentsBitField.Flags.Guilds,
+        IntentsBitField.Flags.GuildMessages,
+        IntentsBitField.Flags.MessageContent,
+        IntentsBitField.Flags.GuildMembers,
+        IntentsBitField.Flags.DirectMessages,
+    ],
+    partials: [Partials.Channel],
+});
+
+client.on("ready", () => {
+    new CommandHandler({
+        client,
+        commandDir: path.join(__dirname, "commands"), // Directory where your commands are located
+        defaultPrefix: "!", // Default prefix for your bot
+    });
+});
+
+client.login(process.env.DISCORD_BOT_TOKEN);
+```
+
+### Add your Bot Token to `.env`
+
+Open the `.env` file and add the following code.
+
+```bash filename=".env" copy
+DISCORD_BOT_TOKEN=YOUR_BOT_TOKEN_HERE
+```
+<Callout type="info">
+If you don't already have the Bot Token, Follow any of these guides to get one.<br/>
+[Setting up a bot application | discord.js Guide](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)<br/>
+[Discord Developer Portal — Documentation — Getting Started](https://discord.com/developers/docs/getting-started#step-1-creating-an-app)
+</Callout>
+
+### Create a `commands` directory
+Create a `commands` directory in the `src` directory.<br/>
+This directory will contain all of your commands.
+```bash copy
+mkdir src/commands
+```
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.Folder name="src" defaultOpen>
+      <FileTree.Folder name="commands" defaultOpen>
+      </FileTree.Folder>
+      <FileTree.File name="index.ts" />
+    </FileTree.Folder>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+    <FileTree.File name="tsconfig.json" />
+  </FileTree.Folder>
+</FileTree>
+
+### Create your first command
+Create a `ping.ts` file in the `commands` directory.<br/>
+
+```bash copy
+touch src/commands/ping.ts
+```
+Add the following code to the `ping.ts` file.
+```ts filename="src/commands/ping.ts" copy showLineNumbers 
+import {
+    CommandObject,
+    CommandType,
+    CommandUsage,
+    CooldownTypes,
+    DefaultCommands,
+} from "@d3oxy/djs-commands";
+
+export default {
+    type: CommandType.BOTH, //Required  CommandType.SLASH or CommandType.BOTH or CommandType.LEGACY
+    description: "Replies with Pong!", // Required for slash commands,
+    callback: ({ client }: CommandUsage) => {
+        return `Pong! Latency is ${client.ws.ping}ms.`;
+    },
+} as CommandObject;
+```
+Your folder structure should look like this:
+<FileTree>
+  <FileTree.Folder name="discordjs-bot" defaultOpen>
+    <FileTree.Folder name="src" defaultOpen>
+      <FileTree.Folder name="commands" defaultOpen>
+        <FileTree.File name="ping.ts" />
+      </FileTree.Folder>
+      <FileTree.File name="index.ts" />
+    </FileTree.Folder>
+    <FileTree.File name=".env" />
+    <FileTree.File name=".gitignore" />
+    <FileTree.File name="package.json" />
+    <FileTree.File name="pnpm-lock.json" />
+    <FileTree.File name="tsconfig.json" />
+  </FileTree.Folder>
+</FileTree>
+
+### Run your bot
+
+It's time to run your bot.<br/>
+Open your terminal and run the following command from the root directory of your bot.
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+    ```bash copy
+    npm run dev
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    yarn dev
+    ```
+  </Tab>
+  <Tab>
+    ```bash copy 
+    pnpm dev
+    ```
+  </Tab>
+</Tabs>
+
+<Callout type="warning">
+You must first add the scripts to your `package.json` file before running the command.<br/>
+Refer [Add neccessary scrips to package.json](/project-setup-typescript#add-neccessary-scrips-to-packagejson)
+</Callout>
+
+If everything went well, you should see the following output in your terminal.
+
+```bash filename="Terminal"
+[nodemon] starting `node dist/index.js`
+
+                ############################################
+                #               DJS Commands               #
+                #                                          #
+                #           The Bot Has Started!           #
+                #          Made with ❤️  by D3OXY.         #
+                ############################################
+        
+DJSCommands >> No MongoDB URI provided. Any features that require a database will not function properly.
+```
+### Try out the `ping` command
+
+Open your discord server and type `!ping` in any channel.<br/>
+
+You should see the following output.
+
+```bash filename="Discord"
+Pong! Latency is 69ms.
+```
+
+<Callout type="warning">
+The Slash Command `/ping` will not work until it's registered by discord, which may take upto 6 hours.<br/>
+Refer [Registering Slash Commands](/not-created-docs) for more info.
+</Callout>
+
+</Steps>
+
+## Congratulations! You have successfully created your first discord bot with DJS-Commands.
+
+### Refer the Advanced Guide to learn more about DJS-Commands.
+
+<Cards>
+  <Card icon={<Icons.Typescript />} title="Commands" href="/getting-started/project-setup-typescript" />
+  <Card icon={<Icons.Typescript />} title="Command Validation" href="/getting-started/project-setup-typescript" />
+  <Card icon={<Icons.Typescript />} title="Event Handler" href="/getting-started/project-setup-typescript" />
+  <Card icon={<Icons.Typescript />} title="Features" href="/getting-started/project-setup-typescript" />
+  <Card icon={<Icons.Typescript />} title="Build-IN Commands and Features" href="/getting-started/project-setup-typescript" />
+</Cards>
+
+{/* prettier-ignore-end */}

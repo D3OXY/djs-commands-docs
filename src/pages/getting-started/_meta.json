@@ -1,3 +1,5 @@
 {
-    "installation": "Installation"
+    "installation": "Installation",
+    "project-setup-typescript": "Project Setup - TypeScript",
+    "project-setup-javascript": "Project Setup - JavaScript"
 }

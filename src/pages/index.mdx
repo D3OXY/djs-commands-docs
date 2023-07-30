@@ -1,4 +1,4 @@
-import { Tab, Tabs, Callout } from "nextra-theme-docs";
+import { Tab, Tabs, Callout } from "nextra/components";
 
 # DJS-Commands
 
@@ -29,6 +29,10 @@ To install the DJS-Commands package run the following command in your terminal:
 
 {/* prettier-ignore-start */}
 
+<Callout type="info">
+Recommended: `pnpm`<br/>[PNPM](https://pnpm.io/) is a fast, disk space efficient package manager that uses hard links and symlinks to save space.
+</Callout>
+
 <Tabs items={["npm", "yarn", "pnpm"]}>
   <Tab>
     ```bash copy
@@ -46,10 +50,6 @@ To install the DJS-Commands package run the following command in your terminal:
     ```
   </Tab>
 </Tabs>
-
-<Callout type="info">
-Recommended: `pnpm`<br/>[PNPM](https://pnpm.io/) is a fast, disk space efficient package manager that uses hard links and symlinks to save space.
-</Callout>
 
 {/* prettier-ignore-end */}
 

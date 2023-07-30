@@ -32,6 +32,7 @@
     "homepage": "https://djscommands.deoxy.dev",
     "dependencies": {
         "@vercel/analytics": "^1.0.1",
+        "lucide-react": "^0.263.1",
         "next": "^13.4.12",
         "nextra": "^2.10.0",
         "nextra-theme-docs": "^2.10.0",
