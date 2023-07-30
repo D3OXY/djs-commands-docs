@@ -42,7 +42,7 @@ const config: DocsThemeConfig = {
     chat: {
         link: "https://deoxy.dev/links?redirect=discord",
     },
-    docsRepositoryBase: "https://github.com/D3OXY/djs-commands-docs",
+    docsRepositoryBase: "https://github.com/D3OXY/djs-commands-docs/tree/main",
     footer: {
         text: () => (
             <div className="flex flex-col w-full items-center justify-center gap-4">
