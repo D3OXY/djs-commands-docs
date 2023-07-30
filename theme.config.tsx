@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
     // logo: <span>Mishal Ikkas Logo Here</span>,
     logoLink: "/",
     project: {
-        link: "https://github.com/D3OXY/djs-commands-docs",
+        link: "https://github.com/D3OXY/djs-commands",
     },
     chat: {
         link: "https://deoxy.dev/links?redirect=discord",
