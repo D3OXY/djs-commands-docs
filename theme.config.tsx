@@ -99,7 +99,7 @@ const config: DocsThemeConfig = {
     banner: {
         key: "1.4.2-release",
         text: (
-            <a href="https://djscommands.deoxy.dev/changelog" target="_blank">
+            <a href="/changelog" target="_blank">
                 🎉 1.4.2 released. Read more →
             </a>
         ),
@@ -115,7 +115,6 @@ const config: DocsThemeConfig = {
         prev: true,
         next: true,
     },
-    // gitTimestamp: true,
     faviconGlyph: "📖",
 };
 
