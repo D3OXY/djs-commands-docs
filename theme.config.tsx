@@ -97,10 +97,10 @@ const config: DocsThemeConfig = {
         };
     },
     banner: {
-        key: "1.4.2-release",
+        key: "1.4.4-release",
         text: (
             <a href="/changelog" target="_blank">
-                🎉 1.4.2 released. Read more →
+                🎉 1.4.4 released. Read more →
             </a>
         ),
     },
