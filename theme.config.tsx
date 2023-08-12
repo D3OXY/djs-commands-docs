@@ -100,7 +100,7 @@ const config: DocsThemeConfig = {
         key: "1.4.4-release",
         text: (
             <a href="/changelog" target="_blank">
-                🎉 1.4.4 released. Read more →
+                🎉 1.4.6 released. Read more →
             </a>
         ),
     },
