@@ -32,7 +32,7 @@ const logo = (
     </>
 );
 
-const config: DocsThemeConfig = {
+const config = {
     logo,
     // logo: <span>Mishal Ikkas Logo Here</span>,
     logoLink: "/",
