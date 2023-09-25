@@ -34,7 +34,6 @@ const logo = (
 
 const config = {
     logo,
-    // logo: <span>Mishal Ikkas Logo Here</span>,
     logoLink: "/",
     project: {
         link: "https://github.com/D3OXY/djs-commands",
@@ -97,10 +96,10 @@ const config = {
         };
     },
     banner: {
-        key: "1.4.4-release",
+        key: "1.4.9-release",
         text: (
             <a href="/changelog" target="_blank">
-                🎉 1.4.6 released. Read more →
+                🎉 1.4.9 released. Read more →
             </a>
         ),
     },

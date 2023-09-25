@@ -1,49 +1,52 @@
 {
-    "name": "djs-commands-docs",
-    "private": true,
-    "version": "1.0.0",
-    "description": "Documentation website for djs-commands npm package.",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/D3OXY/djs-commands-docs"
-    },
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start"
-    },
-    "keywords": [
-        "discord.js",
-        "discord",
-        "bot",
-        "commands",
-        "command handler",
-        "types",
-        "utility",
-        "tool",
-        "docs",
-        "documentation"
-    ],
-    "author": "D3OXY, deoxy.dev",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/D3OXY/djs-commands-docs/issues"
-    },
-    "homepage": "https://djscommands.deoxy.dev",
-    "dependencies": {
-        "@vercel/analytics": "^1.0.1",
-        "lucide-react": "^0.263.1",
-        "next": "^13.4.12",
-        "nextra": "^2.10.0",
-        "nextra-theme-docs": "^2.10.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "@types/node": "^20.4.5",
-        "autoprefixer": "^10.4.14",
-        "postcss": "^8.4.27",
-        "tailwindcss": "^3.3.3",
-        "typescript": "^5.1.6"
-    }
+  "name": "djs-commands-docs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Documentation website for djs-commands npm package.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D3OXY/djs-commands-docs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "discord.js",
+    "discord",
+    "bot",
+    "commands",
+    "command handler",
+    "types",
+    "utility",
+    "tool",
+    "docs",
+    "documentation"
+  ],
+  "author": "D3OXY, deoxy.dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D3OXY/djs-commands-docs/issues"
+  },
+  "homepage": "https://djscommands.deoxy.dev",
+  "dependencies": {
+    "@vercel/analytics": "^1.0.1",
+    "lucide-react": "^0.263.1",
+    "next": "^13.4.12",
+    "nextra": "^2.10.0",
+    "nextra-theme-docs": "^2.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "bun-types": "latest"
+  },
+  "module": "index.ts",
+  "type": "module"
 }
